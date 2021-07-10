@@ -1,0 +1,33 @@
+#main-footer{
+    margin-top:150 !important;
+}
+
+.navbar-custom { 
+    background-color:#040404; 
+    color:#a58787; 
+    border-radius:2; } 
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    }
+
+.label-success {
+        background-color: #5cb85c;
+    }
+.label-danger {
+        background-color: #d9534f;
+    }
+.heading { 
+        color: #27037a; 
+        font-size:25px;
+
+    } 
