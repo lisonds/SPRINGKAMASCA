@@ -14,25 +14,24 @@
 
     <!-- Place your kit's code here -->
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
+    
     <!--Fuente de google Raleway-->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <!--Libreria para efecto lighbox - ekko lightbox-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-
-    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet" >
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	
+    
 
     <title>App Commerce</title>
 </head>
 
 <body>
 
+<!--MENU CABECERA L DECENTRALIZADO-->
 
-<header></header>
-
-
-
-
-   <nav th:insert="views/header/header.html :: header-principal" ></nav> <!--MENU CABECERA L DECENTRALIZADO-->
+   <nav th:insert="views/header/header.html :: header-principal" ></nav> 
+<!--MENU cerrando CABECERA L DECENTRALIZADO-->
 
     <!--Layout principal PANEL DE CONTROL-->
     <div class="container-fluid mt-5">
@@ -61,7 +60,7 @@
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
-                                    <img src="img/panel_img/img001.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img001.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -82,7 +81,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img002.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img002.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -103,7 +102,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img003.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img003.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -124,7 +123,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img004.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img004.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -147,7 +146,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img005.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img005.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -168,7 +167,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img006.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img006.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -189,7 +188,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img007.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img007.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -210,7 +209,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img008.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img008.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -232,7 +231,7 @@
 
                             <div class="card card py-3 bg-light text-center text-secondary">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                    <img src="img/panel_img/img009.jpg" width="300" height="300" alt=""
+                                    <img th:src="@{/img/panel_img/img009.jpg}" width="300" height="300" alt=""
                                         class="img-fluid" />
                                     <a href="#!">
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
