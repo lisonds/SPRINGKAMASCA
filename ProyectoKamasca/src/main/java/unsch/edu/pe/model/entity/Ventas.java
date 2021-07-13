@@ -99,10 +99,18 @@ public class Ventas  {
 		this.factura = factura;
 	}
 
+	@Override
+	public String toString() {
+		return "Ventas [idventas=" + idventas + ", numboleta=" + numboleta + ", producto=" + producto
+				+ ", clasificacion=" + clasificacion + ", fecha=" + fecha + ", costo=" + costo + ", cancelado="
+				+ cancelado + ", factura=" + factura + "]";
+	}
+
 /*	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	private static final long serialVersionUID = 1L;*/
+	
 
 }
