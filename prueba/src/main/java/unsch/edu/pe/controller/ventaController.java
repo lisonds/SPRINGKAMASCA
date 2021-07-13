@@ -1,4 +1,4 @@
-package unsch.edu.pe.Controller;
+package unsch.edu.pe.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,16 +15,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import unsch.edu.pe.model.Ventas;
+import unsch.edu.pe.model.dao.IVentasDao;
+
 
 @Controller
 @RequestMapping(value="/panel")
 public class ventaController {
+	
+	private IVentasDao ventasDao;
+	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
+		
+		model.addAttribute("Ventas",ventasDao.findAll());
+		/*
 		List<Ventas> Lista=getVentas();
 		model.addAttribute("Ventas", Lista);
-		
+		*/
 		
 		return "views/ventas";
 	}
@@ -48,10 +55,11 @@ public class ventaController {
 	}
 	
 	
-	
+	/*
 	private List<Ventas> getVentas(){
 		SimpleDateFormat sdf =new SimpleDateFormat("dd-MM-yyyy");
 		List<Ventas> lista=new LinkedList<Ventas>();
+		
 		try{
 			Ventas venta1=new Ventas();
 			
@@ -102,7 +110,7 @@ public class ventaController {
 		
 		return lista;
 	}
-	
+	*/
 	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
