@@ -8,4 +8,5 @@ public interface IventasService {
 	void guardar(Ventas ventas);
 	List<Ventas> buscarTodas();
 	Ventas buscarPorId(Integer idventas);
+	
 }

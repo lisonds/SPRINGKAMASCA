@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -74,75 +75,34 @@ public class ventaController {
 	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
-		
+		double total=0;
+		double totalnopaga=0;
 		List<Ventas> lista=serviceventas.buscarTodas();
+		for(Ventas v:lista) {
+			System.out.println("COSTOS:"+v.getCosto());
+			total=total+v.getCosto();
+			if(v.getCancelado()==0) {
+				totalnopaga=totalnopaga+v.getCosto();
+			}
+			
+		}
+		System.out.println("totales: "+total);
+		System.out.println("total no paga: "+totalnopaga);
+		
 		System.out.println(lista);
 		model.addAttribute("Ventas", lista);
+		model.addAttribute("total", "S/ "+total);
+		model.addAttribute("nopago", "S/ "+totalnopaga);
 		
-	
+		
 		
 		return "views/ventas";
 	}
 	
+	
+	
+	
 
-	
-	
-	/*
-	private List<Ventas> getVentas(){
-		SimpleDateFormat sdf =new SimpleDateFormat("dd-MM-yyyy");
-		List<Ventas> lista=new LinkedList<Ventas>();
-		
-		try{
-			Ventas venta1=new Ventas();
-			
-			venta1.setNumBoleta(20568);
-			venta1.setProducto("Gigantografias CL");
-			venta1.setClasificacion("Giagantografias");
-			venta1.setFecha(sdf.parse("08-02-2021"));
-			venta1.setCosto(156.50);
-			venta1.setCancelado(1);
-			
-			Ventas venta2=new Ventas();
-			
-			venta2.setNumBoleta(20569);
-			venta2.setProducto("panel publicitario");
-			venta2.setClasificacion("Giagantografias");
-			venta2.setFecha(sdf.parse("08-02-2021"));
-			venta2.setCosto(160.50);
-			venta2.setCancelado(0);
-			
-			Ventas venta3=new Ventas();
-			
-			venta3.setNumBoleta(20570);
-			venta3.setProducto("Gigantografias XL");
-			venta3.setClasificacion("Giagantografias");
-			venta3.setFecha(sdf.parse("08-02-2021"));
-			venta3.setCosto(112.50);
-			venta3.setCancelado(1);
-			
-			Ventas venta4=new Ventas();
-			
-			venta4.setNumBoleta(20571);
-			venta4.setProducto("Gigantografias S");
-			venta4.setClasificacion("Giagantografias");
-			venta4.setFecha(sdf.parse("08-02-2021"));
-			venta4.setCosto(100.00);
-			venta4.setCancelado(0);
-			
-			lista.add(venta1);
-			lista.add(venta2);
-			lista.add(venta3);
-			lista.add(venta4);
-		}catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Error: "+e.getMessage());
-		}
-		
-		
-		
-		return lista;
-	}
-	*/
 	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {

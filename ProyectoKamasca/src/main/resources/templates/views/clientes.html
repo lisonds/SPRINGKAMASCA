@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
+    <!--Fuente de google Raleway-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <!--Libreria para efecto lighbox - ekko lightbox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>App Commerce</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-custom bg-dark-">
+        <img src="img/logo_panelmin.png" alt="" class="img-flud">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item mr-auto">
+                    <a href="panel.html" class="nav-link">Inicio</a>
+                </li>
+                <!--boton inicio de tienda-->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tienda
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="categorias.html" class="dropdown-item">Categorías</a>
+                        <a href="productos.html" class="dropdown-item">Productos</a>
+                        <a href="inventario.html" class="dropdown-item">Inventario</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="pedidos.html" class="dropdown-item">Pedidos</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="cupones.html" class="dropdown-item">Cupones</a>
+                    </div>
+                </li>
+                <!--final boton  de tienda-->
+                <!--boton inicio de Administracion-->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administración
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">Usuarios</a>
+                        <a href="#" class="dropdown-item">Configuración</a>
+                        <a href="#" class="dropdown-item">Roles</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">Sistema</a>
+                </li>
+                <!--final boton  de Administracion-->
+            </ul>
+            <!-- boton para buscar-->
+            <form action="" class="form-inline my-2 my-lg-0 ml-auto">
+                <input type="search" class="form-control mr-sm-2" placeholder="Buscar" aria-label="Search">
+
+                <button class="btn btn-primary my-2 my-sm-0"><i class="fas fa-search"></i> </button>
+            </form>
+            <!-- boton para buscar-->
+            <!-- boton para perfil-->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown mr-3">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user"></i>
+                        Bienvenido</a>
+
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item"><i class="fas fa-user-circle"></i> Perfil</a>
+
+                        <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Configuraciones</a>
+                    </div>
+                </li>
+                <!-- boton para cerrar sesion-->
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-user-times"></i> Salir
+                    </a>
+                </li>
+            </ul>
+            <!-- final boton para perfil-->
+        </div>
+    </nav>
+
+
+
+    <!--Layout de 9 columnas PARA EL PANEL DE CLIENTES-->
+    <div class="container col-sm-12 col-md-9 p-3">
+        <div class="card">
+            <div class="card-header bg-dark text-white text-center">
+                <h4><i class="fas fa-shopping-card"></i> GESTION DE CLIENTES</h4>
+            </div>
+
+            <div class="container bg-dark">
+
+                <ul class="nav nav-tabs bg-dark">
+
+                    <!-- Button trigger modal -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type=" button" class="btn btn-success" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Nuevo
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Modal -->
+                    <div class=" modal fade" id="exampleModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Nuevo Cliente</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="codigo" class="col-form-label">NOMBRE</label>
+                                        <input type="text" class="form-control" id="codigo">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="descripcion" class="col-form-label">APELLIDOS</label>
+                                        <input type="text" class="form-control" id="descripcion">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="categoria" class="col-form-label">DIRECCION</label>
+                                        <input type="text" class="form-control" id="categoria">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="categoria" class="col-form-label">N° DE CELULAR</label>
+                                        <input type="text" class="form-control" id="categoria">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="categoria" class="col-form-label">E-MAIL</label>
+                                        <input type="text" class="form-control" id="categoria">
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-success">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+
+                <div class="tab-content bg-light">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">N°</th>
+                                <th scope="col">NOMBRES</th>
+                                <th scope="col">APELLIDOS</th>
+                                <th scope="col">DIRECCION</th>
+                                <th scope="col">N° DE CELULAR</th>
+                                <th scope="col">E-MAIL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Cristiano</td>
+                                <td>Ronaldo</td>
+                                <td>Jr. asna</td>
+                                <td>999911541</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>AV. chipe</td>
+                                <td>999888777</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <button type="button" class="btn btn-success btn-lg float-right">Reporte</button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src=" https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <script>
+
+        $('.item').click(function () {
+            $('.collapse').collapse('hide');
+        });
+
+
+        $(document).on('click', '[data-toggle="lightbox"]', function (e) {
+            e.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+</body>
+
+</html>
