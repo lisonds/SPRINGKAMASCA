@@ -9,13 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import unsch.edu.pe.model.entity.Factura;
 import unsch.edu.pe.model.entity.Ventas;
 import unsch.edu.pe.service.IventasService;
 
@@ -28,6 +32,45 @@ public class ventaController {
 	
 	@Autowired
 	private IventasService serviceventas;
+	@PostMapping("/save")
+	public String GuardarVentas(Ventas ventas,BindingResult result) {
+		if(result.hasErrors()) {
+			for (ObjectError error: result.getAllErrors()){
+				System.out.println("Ocurrio un error: "+ error.getDefaultMessage());
+			}	
+			return "views/ventasForm";
+		}
+		System.out.println("ventas= "+ventas);
+		Factura fact=new Factura();
+		fact.setIdfactura(0000000002);
+		ventas.setFactura(fact);
+		serviceventas.guardar(ventas);
+		return "redirect:/panel/ventas";
+	}
+	
+	@GetMapping("/form")
+	public String formventas() {
+		
+		
+		return "views/ventasForm";
+	}
+	
+	/*	@GetMapping("/guarda")
+	public String GuardarVentas() {
+		Ventas ventas=new Ventas();
+		ventas.setIdventas(6);
+		ventas.setNumboleta("128");
+		ventas.setProducto("gigantofrafiaLis");
+		ventas.setClasificacion("giganto");
+		ventas.setFecha(new Date());
+		ventas.setCosto(305.20);
+		ventas.setCancelado(0);
+		Factura fac=new Factura();
+		fac.setIdfactura(0000000001);
+		ventas.setFactura(fac);
+		serviceventas.guardar(ventas);
+		return "views/ventas";
+	}*/
 	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
@@ -42,22 +85,6 @@ public class ventaController {
 	}
 	
 
-	/*voy recibir valores de html*/
-	@PostMapping("/save")
-	public String crear(@RequestParam("numBoleta") Integer numBoleta,
-			@RequestParam("producto") String producto,
-			@RequestParam("clasificacion") String clasificacion,
-			@RequestParam("fechaVenta") Date fechaVenta,
-			@RequestParam("precio") Integer precio,
-			@RequestParam("cancelado") Integer cancelado) {
-		System.out.println("numero de boleta: "+numBoleta);
-		System.out.println("producto: "+producto);
-		System.out.println("clasificacion: "+clasificacion);
-		System.out.println("fecha de venta: "+fechaVenta);
-		System.out.println("precio: "+precio);
-		System.out.println("Cancelado: "+cancelado);
-		return "views/ventas";
-	}
 	
 	
 	/*
