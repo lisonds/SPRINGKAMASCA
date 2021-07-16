@@ -43,7 +43,7 @@
 
     <!--Layout principal-->
    <div class="container card-body">
-    		<form th:action="@{/panel/disenia/save}" method="post" class="form" role="form" autocomplete="off">
+    		<form th:action="@{/panel/disenia/save}" method="post" class="form" role="form" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label form-control-label">Nombre</label>
                     <div class="col-md-9">
@@ -53,7 +53,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">celular</label>
                     <div class="col-lg-9">
-                        <input type="text" class="celular" name="celular" id="producto" placeholder="ingrese nombre del producto." required="required">
+                        <input type="text" class="celular" name="celular" id="producto" placeholder="numero de celular." required="required">
                     </div>
                 </div>
                 <div class="form-group row">

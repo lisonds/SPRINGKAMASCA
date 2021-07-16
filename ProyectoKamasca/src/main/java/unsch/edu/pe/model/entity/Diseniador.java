@@ -15,7 +15,7 @@ public class Diseniador {
 	private String nombre;
 	private String celular;
 	private String correo;
-	private String fotoperfil="not imagen";
+	private String fotoperfil;
 
 	public int getId() {
 		return id;
