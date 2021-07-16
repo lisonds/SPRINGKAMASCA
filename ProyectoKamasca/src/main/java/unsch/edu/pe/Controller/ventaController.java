@@ -1,9 +1,13 @@
 package unsch.edu.pe.Controller;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.TextStyle;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +26,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import unsch.edu.pe.model.entity.Factura;
 import unsch.edu.pe.model.entity.Ventas;
+import unsch.edu.pe.model.entity.ventaMes;
+import unsch.edu.pe.service.IVentaMesService;
 import unsch.edu.pe.service.IventasService;
 
 
@@ -30,9 +36,11 @@ import unsch.edu.pe.service.IventasService;
 @Controller
 @RequestMapping(value="/panel")
 public class ventaController {
-	
+	Month mes = LocalDate.now().getMonth();
+	private double total;
 	@Autowired
 	private IventasService serviceventas;
+	
 	@PostMapping("/save")
 	public String GuardarVentas(Ventas ventas,BindingResult result) {
 		if(result.hasErrors()) {
@@ -43,9 +51,14 @@ public class ventaController {
 		}
 		System.out.println("ventas= "+ventas);
 		Factura fact=new Factura();
+		
 		fact.setIdfactura(0000000002);
 		ventas.setFactura(fact);
 		serviceventas.guardar(ventas);
+		
+		
+		
+		
 		return "redirect:/panel/ventas";
 	}
 	
@@ -75,7 +88,7 @@ public class ventaController {
 	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
-		double total=0;
+		total=0;
 		double totalnopaga=0;
 		List<Ventas> lista=serviceventas.buscarTodas();
 		for(Ventas v:lista) {
@@ -93,6 +106,10 @@ public class ventaController {
 		model.addAttribute("Ventas", lista);
 		model.addAttribute("total", "S/ "+total);
 		model.addAttribute("nopago", "S/ "+totalnopaga);
+
+		String nombreMes = mes.getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
+		System.out.println("El mes es="+nombreMes);
+		model.addAttribute("fechaactual", nombreMes);
 		
 		
 		

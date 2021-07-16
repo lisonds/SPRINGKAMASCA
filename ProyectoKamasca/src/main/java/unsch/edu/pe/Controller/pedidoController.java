@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "/panel")
-public class InventarioController {
-	
-	@GetMapping("/inventario")
+public class pedidoController {
+
+	@GetMapping("/pedidos")
 	public String Inventario() {
 
-		return "views/gestionarInventario";
+		return "views/pedidos";
 	}
 }

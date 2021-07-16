@@ -96,13 +96,14 @@
 								<div class="theme-showcase col-sm-12 col-md-9">
 									<h1> ventas totales</h1>
 									<div class=" d-flex bg-light bd-highlight">
-										<div class="p-2 w-25 bd-highlight">
-											<h3>TOTAL :</h3>
+										<div class="p-2 w-50 bd-highlight">
+											<h3>TOTAL MES DE :</h3> <h3 th:text="${fechaactual}" class=" bd-highlight  "></h3>
 										</div>
 										<div class="p-2 flex-shrink-1 bd-highlight border border-secondary ">
 											<h3 th:text="${total}">s/ 325.26</h3>
 										</div>
 									</div>
+									<a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cargar MEs</a>
 								</div>
 
 								<!--ACORDEON PARA LA TABLA DE COSTOS MENSUALES-->
@@ -111,7 +112,7 @@
 								<nav class="navbar navbar-light bg-dark">
 									<div class="container-fluid">
 										<a class="navbar-brand text-info" href="#">
-											<h2>Total de ventas por meses</h2>
+											<h2 >Total de ventas por meses</h2>
 										</a>
 									</div>
 								</nav>
@@ -155,7 +156,19 @@
 
 								<h1> Falta cuadro estadistico</h1>
 
+									
+                        <div class="card rounded-8">
 
+                            <div class="card-header">
+                                <h6>Gráfico Estadistico</h6>
+                            </div>
+
+                            <div class="carf-body">
+                                <canvas id="myChart"></canvas>
+                            </div>
+
+                        </div>
+                    
 
 
 
@@ -174,32 +187,6 @@
 
 
 
-<!--Paginación-->
-<div class="mt-3">
-	<nav aria-label="Page navigation">
-		<ul class="pagination">
-			<li class="page-item">
-				<a href="#" class="page-link" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
-			</li>
-			<li class="page-item active">
-				<a href="#" class="page-link">1</a>
-			</li>
-			<li class="page-item">
-				<a href="#" class="page-link">2</a>
-			</li>
-			<li class="page-item">
-				<a href="#" class="page-link">3</a>
-			</li>
-			<li class="page-item">
-				<a href="#" class="page-link" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
-</div>
 
 
 </div>
@@ -285,25 +272,69 @@
 	</div>
 </div>
 -->
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-   
-   <!-- Optional JavaScript -->
-<script th:src="@{/https://code.jquery.com/ui/1.12.1/jquery-ui.js}"></script>
-<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>    
-<script th:src="@{/tinymce/tinymce.min.js}"></script>
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <!-- para el grafico (usamos chart.js )-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"
+        integrity="sha256-GMN9UIJeUeOsn/Uq4xDheGItEeSpI5Hcfp/63GclDZk=" crossorigin="anonymous"></script>
 
-<script>
+    <script>
+        // <block:setup:1>
+        const labels = ['2020',
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+        ];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Mi primer Grafico Kamasca',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [8000,5000,8000,7000,10000,9000,8500],
+            }]
+        };
+        // </block:setup>
+
+        // <block:config:0>
+        const config = {
+            type: 'line',
+            data,
+            options: {}
+        };
+        // </block:config>
+
+        module.exports = {
+            actions: [],
+            config: config,
+        };
+    </script>
+    
+    
+    
+    
+    <script>
+        // === include 'setup' then 'config' above ===
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+    <script>
 
 	$('.item').click(function () {
 		$('.collapse').collapse('hide');
