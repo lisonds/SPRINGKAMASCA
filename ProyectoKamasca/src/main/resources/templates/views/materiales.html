@@ -50,16 +50,17 @@
                             <div class="col-lg-12 text-center">
                                 <div class="row">
                                     <!--tarjeta 1-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
+                                    <div th:each="mate:${Materiales}" class="col-lg-4 col-md-12 mb-4 p-3">
                                         <div class="card-section border rounded ml-4 mr-4">
                                             <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout
+                                                <h2 class="card-header-title mb-3 mt-1 text-white" Th:text="${mate.nombre}">Banner Blackout
                                                 </h2>
                                             </div>
                                             <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.1m x 50m</h4>
+                                                <img th:src="@{/img/{im} (im=${mate.imagen})}" width="300" height="300" alt="" class="img-fluid" />
+                                                <h4 class="card-text">Gramaje:11 onzas <br>
+                                                    [[${mate.ancho}]] m x [[${mate.largo}]] m</h4>
+                                                    
         
         
                                                 <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
@@ -70,135 +71,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--tarjeta 2-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout</h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.6m x 50m</h4>
-        
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 3-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout</h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    0.6m x 50m</h4>
-        
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 4-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout</h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.3m x 50m</h4>
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 5-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout</h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.2m x 50m</h4>
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 6-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Banner Blackout
-                                                </h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/banner.jpg" width="300" height="300" alt="" class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.4m x 50m</h4>
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 7-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Vinil Mate
-                                                </h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/vinilMate.jpg" width="300" height="300" alt=""
-                                                    class="img-fluid" />
-                                                <br>
-                                                <br>
-                                                <br>
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.5m x 50m</h4>
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--tarjeta 8-->
-                                    <div class="col-lg-4 col-md-12 mb-4 p-3">
-                                        <div class="card-section border rounded ml-4 mr-4">
-                                            <div class="card-header card-header-second rounded bg-secondary">
-                                                <h2 class="card-header-title mb-3 mt-1 text-white">Vinil Glosy
-                                                </h2>
-                                            </div>
-                                            <div class="card-body text-center">
-                                                <img src="/img/vinilGlosy.jpg" width="300" height="300" alt=""
-                                                    class="img-fluid" />
-                                                <h4 class="card-text">Gramaje: 11 onzas <br>
-                                                    1.5m x 50m</h4>
-                                                <button type=" button" class="btn btn-success btn-lg" data-toggle="modal"
-                                                    data-target="#Modal2">
-                                                    Usar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
         
                                 </div>
                             </div>
