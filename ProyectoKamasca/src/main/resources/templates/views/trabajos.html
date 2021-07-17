@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+
+<head th:insert="views/head/head.html :: head-estilos">
+	<!--AQUI VA TODO LOS ESTILOS-->
+	<!-- Bootstrap core CSS -->
+
+
+</head>
+
+<body>
+
+ <nav th:insert="views/header/header.html :: header-principal"></nav>
+	<!--MENU CABECERA L DECENTRALIZADO-->
+
+
+	<!--Layout principal PANEL DE CONTROL-->
+	<div class="container-fluid mt-5">
+		<div class="row">
+			<!--Layout de 3 columnas DEL TOTAL 12  PARA MENU PRINCIPAL menu-principal-->
+			<div th:insert="views/menu/menu.html :: menu-principal" class="col-sm-12 col-md-3 ">
+				
+
+			</div>
+
+            <!--Layout de 9 columnas PARA EL PANEL DE CONTROL-->
+            <div class="col-sm-12 col-md-8">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h4><i class="fas fa-shopping-card"></i>Trabajos: Edison Flores</h4>                        
+                    </div>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Medida</th>
+                        <th scope="col">Precio</th>
+                                              
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Vinil</td>
+                        <td>3m x 1.5m</td>
+                        <td>S/ 110.00</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Luminoso</td>
+                        <td>4m x 1m</td>
+                        <td>S/ 600.00</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Banner</td>
+                        <td>2m x 3m</td>
+                        <td>S/ 90.00</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Bastidor</td>
+                        <td>2m x 1m</td>
+                        <td>S/ 110.00</td>
+                      </tr>
+                      
+                    </tbody>
+                    
+                  </table>    
+                  
+                  <div class="col center">
+                    <button type="button" class="btn btn-secondary btn-lg">Reporte</button>
+                </div> 
+                  
+
+
+            </div>
+
+           
+                    
+
+</body>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Footer-->
+<footer id="main-footer" class="bg-dark text-white mt-5 p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="lead text-center">
+                    UNSCH-2021 - Todos los derechos &copy;
+                    <span>Lisonds Tulio</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script>
+
+    $('.item').click(function () {
+        $('.collapse').collapse('hide');
+    });
+
+
+    $(document).on('click', '[data-toggle="lightbox"]', function (e) {
+        e.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+</body>
+
+</html>

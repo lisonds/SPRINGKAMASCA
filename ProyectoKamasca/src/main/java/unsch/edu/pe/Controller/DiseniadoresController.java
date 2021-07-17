@@ -25,6 +25,11 @@ public class DiseniadoresController {
 
 		return "views/usuarios";
 	}
+	@GetMapping("/disenia/trabajos")
+	public String trabajos() {
+
+		return "views/trabajos";
+	}
 
 	@GetMapping("/disenia/from")
 	public String DiseniadoresFrom() {
@@ -35,13 +40,14 @@ public class DiseniadoresController {
 	@PostMapping("/disenia/save")
 	public String Guardar(Diseniador diseniador, BindingResult result,
 			@RequestParam("fotoperfil") MultipartFile multiPart) {
+		/*
 		if (result.hasErrors()) {
 			for (ObjectError error : result.getAllErrors()) {
 				System.out.println("Ocurrio un error: " + error.getDefaultMessage());
 			}
 			return "views/diseniadorFrame";
 		}
-
+*/
 		// para imagen
 		System.out.println("LLLEGO PARA EL IMAGEN ");
 		if (!multiPart.isEmpty()) {
