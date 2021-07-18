@@ -1,0 +1,104 @@
+<!doctype html>
+<html html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+	<!-- Place your kit's code here -->
+	<script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
+
+	<link rel="stylesheet" href="css/estilos.css">
+
+	<title>App Commerce</title>
+</head>
+
+<body>
+
+
+
+	<!--Layout principal-->
+
+	<div class="container card-body">
+		<form th:action="@{/panel/materiales/save}" method="post" class="form" role="form" autocomplete="off"
+			enctype="multipart/form-data">
+			<h3> MEDIDA DE CORTE EN METROS</h3>
+				<tr th:each="mate:${materiales}">
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label form-control-label">ID</label>
+				<div class="col-md-9" th:text="${mate.idmateriales}" >
+					<input type="number" class="form-control" name="idmateriales" id="largo" placeholder="numero de boleta"
+						required="required">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label form-control-label">Ancho</label>
+				<div class="col-md-9" th:text="${mate.ancho}">
+					<input  type="number" class="form-control" name="ancho" id="largo" placeholder="numero de boleta"
+						required="required">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label form-control-label">Nombre</label>
+				<div class="col-md-9" th:text="${mate.nombre}">
+					<input  type="text" class="form-control" name="nombre" id="largo" placeholder="numero de boleta"
+						required="required">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-md-3 col-form-label form-control-label">Imagen</label>
+				<div class="col-md-9" th:text="${mate.imagen}">
+					<input  type="text" class="form-control" name="imagen" id="largo" placeholder="numero de boleta"
+						required="required">
+				</div>
+			</div>
+
+
+
+			<div class="form-group row" >
+				<label class="col-md-3 col-form-label form-control-label">Cortar en Metros</label>
+				<div class="col-md-9" th:text="${mate.largo}">
+					<input  type="number" class="form-control" name="largo" id="largo" placeholder="cortar en metros"
+						>
+				</div>
+			</div>
+
+
+			<div class="form-group row">
+				<label class="col-lg-3 col-form-label form-control-label"></label>
+				<div class="col-lg-9">
+					<input type="reset" class="btn btn-secondary" value="Cancel">
+					<input type="submit" class="btn btn-primary" value="Guardar Venta">
+				</div>
+			</div>
+			</tr>
+		</form>
+
+	</div>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<!--Inclusión ckeditor-->
+	<script src="//cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace("editor1");
+	</script>
+</body>
+
+</html>
